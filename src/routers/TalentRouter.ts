@@ -16,7 +16,7 @@ class TalentRouter {
     }
 
     getRoutes(){
-        this.router.get('/id/:id', TalentValidators.Talent(), GlobalMiddleWare.checkError, TalentController.Talent);
+        this.router.get('/member/:slug', TalentValidators.Talent(), GlobalMiddleWare.checkError, TalentController.Talent);
         this.router.get('/all', TalentController.All);
 
         // API
