@@ -19,7 +19,7 @@ class TalentPortfolioRouter {
         this.router.get('/talent/:id', TalentPortfolioValidators.TalentPortfolio(), GlobalMiddleWare.checkError, TalentPortfolioController.TalentPortfolio);
     }
     postRoutes(){
-        this.router.post('/create', GlobalMiddleWare.adminAuthenticate, new Utils().TalentPortfolioMulter.fields([{ name: 'media'}]), TalentPortfolioValidators.add(), GlobalMiddleWare.checkError, TalentPortfolioController.Add);
+        this.router.post('/add', GlobalMiddleWare.adminAuthenticate, new Utils().TalentPortfolioMulter.fields([{ name: 'media'}]), TalentPortfolioValidators.add(), GlobalMiddleWare.checkError, TalentPortfolioController.Add);
     }
     patchRoutes(){
         this.router.patch('/update/:id', GlobalMiddleWare.adminAuthenticate, new Utils().TalentPortfolioMulter.fields([{ name: 'media'}]), TalentPortfolioValidators.update(), GlobalMiddleWare.checkError, TalentPortfolioController.Update);
