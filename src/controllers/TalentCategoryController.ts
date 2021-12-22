@@ -44,7 +44,7 @@ export class TalentCategoryController {
     static async AllCategory(req, res, next){
 
         try {
-            const talentCategory = await TalentCategory.find({status:true}, {__v: 0});
+            const talentCategory = await TalentCategory.find({status:true}, {__v: 0}).sort({sequence:1}).populate({path:'talents'});
             const data = {
                 message : 'Success',
                 data:talentCategory
@@ -58,7 +58,7 @@ export class TalentCategoryController {
     static async AllAdminCategory(req, res, next){
 
         try {
-            const talentCategory = await TalentCategory.find();
+            const talentCategory = await TalentCategory.find().sort({sequence:1});
             const data = {
                 message : 'Success',
                 data:talentCategory
