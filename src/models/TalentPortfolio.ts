@@ -4,7 +4,7 @@ import { Utils } from '../utils/Utils';
 
 const TalentFavouriteSchema = new mongoose.Schema({
     talent_id         : {type: mongoose.Types.ObjectId, ref: 'talents', required: true},
-    media_type        : {type: String, enum: ['image','video'], required: true},
+    media_type        : {type: String, enum: ['image','video'], required: false},
     media             : {type: String, required: false},
     link              : {type: String, required: true},
     created_at        : {type: Date, required: true, default: Utils.indianTimeZone},
