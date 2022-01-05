@@ -28,7 +28,7 @@ export class TalentValidators{
 
     static Talent() { 
         return [param('slug').custom((slug, {req}) => {
-            return Talent.findOne({slug: slug}, {__v: 0}).populate([{ path: "talent_category_id"},{ path: "portfolios"}]).then((talent) => {
+            return Talent.findOne({slug: slug}, {__v: 0}).then((talent) => {
                 if (talent) {
                     req.talent = talent;
                     return true;
