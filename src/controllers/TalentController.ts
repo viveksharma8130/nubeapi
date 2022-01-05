@@ -62,9 +62,9 @@ export class TalentController {
         try {
             if(req.query.limit){
                 console.log(req.query.limit);
-                var talent = await Talent.find({status:true}, {__v: 0}).limit(parseInt(req.query.limit)).sort({sequence:1}).populate({path:'talent_category_id'});
+                var talent = await Talent.find({status:true}, {name: 1, home_image:1, slug:1}).limit(parseInt(req.query.limit)).sort({sequence:1});
             }else{
-                var talent = await Talent.find({status:true}, {__v: 0}).sort({sequence:1}).populate({path:'talent_category_id'});
+                var talent = await Talent.find({status:true}, {name: 1, home_image:1, slug:1}).sort({sequence:1});
             }
             
             const data = {
