@@ -9,6 +9,7 @@ const TalentSchema = new mongoose.Schema({
     designation              : {type: String, required: true},
     about                    : {type: String, required: true},
     portfolio_link           : {type: String, required: false},
+    featured_url           : {type: String, required: false},
     vimeo                    : {type: String, required: false},
     instagram                : {type: String, required: false},
     linkedin                 : {type: String, required: false},
