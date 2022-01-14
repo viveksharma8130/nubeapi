@@ -44,7 +44,7 @@ export class TalentCategoryController {
     static async AllCategory(req, res, next){
 
         try {
-            const talentCategory = await TalentCategory.find({status:true}, {category:1}).sort({sequence:1}).populate({path:'talents', select:['slug', 'name', 'image','-talent_category_id']});
+            const talentCategory = await TalentCategory.find({status:true}, {category:1}).sort({sequence:1}).populate({path:'talents', select:['slug', 'name', 'image','-talent_category_id'], options: { sort: { 'sequence_category': 1 } } });
             const data = {
                 message : 'Success',
                 data:talentCategory
@@ -58,7 +58,7 @@ export class TalentCategoryController {
     static async AllAdminCategory(req, res, next){
 
         try {
-            const talentCategory = await TalentCategory.find().sort({sequence:1});
+            const talentCategory = await TalentCategory.find().sort({sequence:1}).populate({path:'talents', select:['slug', 'name', 'image','-talent_category_id'], options: { sort: { 'sequence_category': 1 } } });
             const data = {
                 message : 'Success',
                 data:talentCategory

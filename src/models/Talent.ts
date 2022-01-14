@@ -19,6 +19,7 @@ const TalentSchema = new mongoose.Schema({
     image                    : {type: String, required: true},
     home_image               : {type: String, required: true},
     sequence                 : {type: Number, required: false},
+    sequence_category        : {type: Number, required: false},
     status                   : {type: Boolean, required: true, default: true},
     created_at               : {type: Date, required: true, default: Utils.indianTimeZone},
     updated_at               : {type: Date, required: true, default: Utils.indianTimeZone},
